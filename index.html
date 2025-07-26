@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="auth-section" class="auth-section">
+            <h2>Login / Register</h2>
+            <input type="email" id="auth-email" placeholder="Email">
+            <input type="password" id="auth-password" placeholder="Password">
+            <button id="register-btn">Register</button>
+            <button id="login-btn">Login</button>
+
+            <p class="or-separator">OR</p>
+
+            <button id="google-login-btn" class="google-btn">
+                <i class="fab fa-google"></i> Sign in with Google
+            </button>
+            <p id="auth-error-message" class="error-message"></p>
+        </div>
+
+        <div id="app-section" class="app-section hidden">
+            <div class="header">
+                <h2 id="user-display-name">Welcome, Guest!</h2>
+                <button id="logout-btn">Logout</button>
+            </div>
+
+            <div class="user-list">
+                <h3>Online Users</h3>
+                <ul id="online-users-list">
+                    <li>No one online yet.</li>
+                </ul>
+            </div>
+
+            <div class="call-section">
+                <h3>Make a Call</h3>
+                <input type="email" id="call-email-input" placeholder="Enter recipient's email to call">
+                <button id="start-call-btn">Start Call</button>
+
+                <div id="incoming-call-section" class="incoming-call-section hidden">
+                    <p id="incoming-caller-info"></p>
+                    <button id="accept-call-btn">Accept</button>
+                    <button id="reject-call-btn">Reject</button>
+                </div>
+
+                <div id="call-controls" class="call-controls hidden">
+                    <button id="mute-audio-btn">Mute Audio</button>
+                    <button id="toggle-video-btn">Toggle Video</button>
+                    <button id="hang-up-btn">Hang Up</button>
+                </div>
+
+                <div class="video-streams">
+                    <video id="local-video" autoplay muted></video>
+                    <video id="remote-video" autoplay></video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
